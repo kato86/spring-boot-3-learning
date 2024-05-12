@@ -15,10 +15,10 @@ public class DemoController {
 
     // define a constructor for dependency injection
         @Autowired
-        public DemoController(@Qualifier("cricketCoach") Coach theCoach, @Qualifier("cricketCoach") Coach anotherCoach) {
+        public DemoController(@Qualifier("cricketCoach") Coach theCoach, @Qualifier("cricketCoach") Coach theAnotherCoach) {
             System.out.println("In constructor: " + getClass().getSimpleName());
             myCoach = theCoach;
-            anotherCoach = anotherCoach;
+            anotherCoach = theAnotherCoach;
         }
 
 //    @Autowired
@@ -33,6 +33,6 @@ public class DemoController {
 
     @GetMapping("/check")
     public String check() {
-            return "Comparing beans: myCoach === anotherCoach "
+            return "Comparing beans: myCoach == anotherCoach" + (myCoach == anotherCoach);
     }
 }
