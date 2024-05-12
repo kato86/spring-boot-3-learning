@@ -33,6 +33,6 @@ public class DemoController {
 
     @GetMapping("/check")
     public String check() {
-            return "Comparing beans: myCoach == anotherCoach, (test)" + (myCoach == anotherCoach);
+            return "Comparing beans: myCoach == anotherCoach, " + (myCoach == anotherCoach);
     }
 }
